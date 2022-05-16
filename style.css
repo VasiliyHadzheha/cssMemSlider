@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: grey;
+}
+
+p {
+  font-size: 26px;
+  color: gainsboro;
+}
+
+
+
+.slider-container-main {
+  width: 1100px;
+  height: 600px;
+  overflow: hidden;
+  border: 10px solid #aaa;
+}
+
+.center {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.navigation-bar {
+  position: absolute;
+  display: flex;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 16px;
+  justify-content: center;
+}
+
+.bar {
+  height: 20px;
+  width: 30px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: black;
+  opacity: 0.5;
+  border-radius: 40px;
+  transition: all 0.7s ease;
+}
+
+.bar:hover {
+  opacity: 0.9;
+  transform: scale(0.5s);
+  border-radius: 20%;
+  box-shadow: 0px 0px 8px 1px #000000;
+}
+
+input[name="r"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+.slides-container {
+  width: 400%;
+  height: 100%;
+  display: flex;
+}
+
+.slide {
+  width: 25%;
+  transition: all 1s ease-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+}
+
+#rb1:checked ~ .slide-first {
+  margin-left: 0;
+}
+#rb2:checked ~ .slide-first {
+  margin-left: -25%;
+}
+#rb3:checked ~ .slide-first {
+  margin-left: -50%;
+}
+#rb4:checked ~ .slide-first {
+  margin-left: -75%;
+}
+
+.text-container {
+	position: absolute;
+	display: flex;
+	width: 400%;
+	margin-top: 4%;
+	margin-left: 16%;
+}
+
+.each-text-container {
+  width: 25%;
+  transition: all 1s ease-out;
+}
+
+#rb1:checked ~ .text-container>.text-first {
+  margin-left: 0;
+}
+#rb2:checked ~ .text-container>.text-first {
+  margin-left: -22%;
+}
+#rb3:checked ~ .text-container>.text-first {
+  margin-left: -46%;
+}
+#rb4:checked ~ .text-container>.text-first {
+  margin-left: -75%;
+}
+
+@media (max-width: 968px) {
+	.slider-container-main {
+		width: 600px;
+		height: 300px;
+	}
+
+	.bar {
+		width: 15px;
+		height: 20px;
+	}
+
+	p {
+		font-size: 22px;
+	}
+}
+
+@media (max-width: 768px) {
+	.slider-container-main {
+		width: 400px;
+		height: 225px;
+	}
+
+	.bar {
+		width: 10px;
+		height: 10px;
+	}
+
+	p {
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 448px) {
+	.slider-container-main {
+		width: 300px;
+		height: 180px;
+	}
+
+	.bar {
+		width: 8px;
+		height: 8px;
+	}
+
+	p {
+		font-size: 8px;
+	}
+}
